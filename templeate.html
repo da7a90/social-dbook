@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+    <title>Soical Site Developers In Chennai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/social.css" /> 
+    <link rel="shortcut icon" href="./favicon.png" type="image/png">
+<style>
+ .close-file{
+float:right;
+position:relative;
+ right:12px;
+ top:3px;
+ cursor:pointer;
+ background:#95a5a6;
+ padding:1px 6px;
+ border-radius:50%;
+ color:white;
+ }
+ .fa-file-image-o,.fa-file-video-o,.fa-file-audio-o{
+ color:#5c97bf;
+ }
+.fa-file-image-o:hover,.fa-file-video-o:hover,.fa-file-audio-o:hover{
+ cursor:pointer;
+ transform: scale(1.6);
+ color:black;
+ }
+hr.style-two {
+margin-top:-2px;
+margin-bottom:-1px;
+    border: 0;
+    height: 1px;
+     background:  #ccc;
+}
+ .preview{
+
+ float:left;
+ }
+.cmt-ago{
+font-size:75%;
+}
+#inputs{
+postion:absolute;
+float:left;
+}
+ </style>
+	</head>
+<body>
+
+  <div class="container" style="margin-top:16px;">
+<div class="row">
+<div class="col-md-8">
+
+<div class="col-md-12 white">
+<img src="images/mike.jpg" style="padding-right:12px; position:absolute; margin-top:35px; width:65px; height:54px;   border-radius: 6px 0px 0px 6px; z-inde:1; " >
+<h5>Whats happened?</h5>
+<form id="UpdateStatus">
+<textarea class="form-control" id="textarea" spellcheck="false" name="status" style="resize:none; overflow:hidden; padding-left:68px;" placeholder="Update your status"></textarea>
+<br>
+<div class="preview"></div>
+<div id="inputs">
+<input type="file" name="image" onchange="previewImage(this)"  id="imageUp" accept="image/*"  class="inputfile "/><label for="imageUp">&nbsp;&nbsp;<i style="" class="fa fa-file-image-o  fa-2x"></i>&nbsp;</label>
+<input type="file" name="video" onchange="previewVideo(this)" id="videoUp" accept="video/*"  class="inputfile "/><label for="videoUp">&nbsp;&nbsp;<i style=""  class="fa fa-file-video-o  fa-2x"></i>&nbsp;&nbsp;</label>
+<input type="file" name="audio" onchange="previewAudio(this)" id="audioUp" accept="audio/*"  class="inputfile "/><label for="audioUp">&nbsp;&nbsp;<i style=""  class="fa fa-file-audio-o  fa-2x"></i></label>
+</div>
+
+<button type="submit" class="btn btn-primary pull-right" id="post" >Post</button>
+</form>
+</div>
+
+<div class="col-md-12 white">
+</div>
+
+ <div class="col-md-12 white" data-divId="div66" id="div66">
+	 <a href="profile.php?id=1"><img src="images/mike.jpg" style="padding-right:12px;"  class="img-newsfeed-user pull-left">
+	 <span class="profile-name">Mike Tavish</span></a>
+	 <small><small> &nbsp;&nbsp;Updated</small></small>
+	  <span style="margin-top:-6px; margin-left:3px;" class="dropdown pull-right">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-chevron-down"></i> </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Edit</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#" onClick="deletePost('66') ">Delete</a></li>
+          </ul>
+        </span>
+ <span class="pull-right device">- Via Windows 10 <img src="images/Windows 10.jpg" width="15px"></span>
+
+
+	 <span class="post-ago">Posted 4 weeks ago</span>
+<hr><p class="p-post"><a href="hashtag.php?tags=CustomBikes">#CustomBikes</a> ipa solu </p>
+
+<hr class="style-two">
+<p style="display:block;background-color:#ecf0f1; padding:0 15px;">
+<a href="javascript:void(0);" style="color:#333; background:#ecf0f1; margin-right:12px;" onclick="like('66')" >2 <i class="fa fa-thumbs-o-up"></i> Like </a>
+
+<a  style=" color:#4B77BE; background:#ecf0f1; margin-right:12px;" href="javascript:void(0);" onclick="dislike('66')"  >0 <i class="fa fa-thumbs-o-down"></i>&nbsp;Dislike</a>
+
+<a  style="color:#333; background:#ecf0f1; margin-right:12px;" href="#"   >0 <i class="fa fa-comment"></i>&nbsp;Comment</a>
+</p>
+<hr class="style-two">
+		
+<p><a href="profile.php?id=1">
+<img src="images/mike.jpg" style="padding-right:12px; width:45px; height:35px; " width="35" height="35" class="img-newsfeed-user pull-left">
+<span class="profile-name-comment">Mike Tavish</a></span>&nbsp;<span class="cmt-ago">one month ago</span>
+<span class="post-ago" style="font-size:95%; font-weight:bold;">puriyala da </span>  </p>
+<hr class="style-two"><br>
+<div class="input-group"><div class="input-group-btn"><form action=""    method="POST" role="form"><img src="images/naveen.jpg" width="35px" height="34px" style="border:1px solid #ccc; " ></div>
+                                      <input type="text" id="text66" class="form-control" name="comment"  placeholder="Add a comment.."><div class="input-group-btn"></form>									
+									 <button class="btn comt"  onclick="commented('66');"  >Comment</button></div>
+                                      </div>
+
+
+</div>
+</div>
+</div>
+</div>
+  
+  
+
+
+
+  
+
+<script type="text/javascript" src="./js/data.min.js"></script>
+
+<script>
+function deletePost(pid){
+var divId = $("#div"+pid);
+divId.html('<br><center><h1>Are you sure to Delete this Post?</h1><p claas="alert-warning">This cannot be undo</p><button onclick="deleteCon(\''+pid+'\')" class="btn btn-primary">Delete</button>&nbsp;&nbsp;&nbsp;<button onclick="getDiv(\''+pid+'\') " class="btn btn-default">Cancel</button></center>');
+}
+//preview image
+function previewImage(input){
+$("#inputs").hide();
+if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+$(".preview").html('<img src="'+e.target.result +'" id="imagePreview"  width="75px" style="position:relative; margin-top:6px; float:left; border-raduis:13px;" height="75px"><span onclick="closeFile()" class="close-file">&times;</span>');
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+$("#post").css({"margin-top":"39px"});
+}
+
+//preview video
+function previewVideo(input){
+$("#inputs").hide();
+if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+$(".preview").html('<video width="75px" height="75px" border="1px" style="border:1px solid #95a5a6; margin-top:6px;"><source src="'+ e.target.result +'" type="video/mp4"></video><span onclick="closeFile()" class="close-file">&times;</span>');
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+$("#post").css({"margin-top":"39px"});
+}
+
+//preview audio
+function previewAudio(input){
+$("#inputs").hide();
+if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+$(".preview").html('<audio controls style="border:1px solid #95a5a6; width:295px; margin-top:12px;"><source src="'+ e.target.result +'" type="audio/mpeg"></audio><span onclick="closeFile()" class="close-file">&times;</span>');
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+$("#post").css({"margin-top":"39px"});
+}
+
+
+function closeFile(){
+$(".preview").html('');
+$("#inputs").show();
+$("#post").css({"margin-top":"9px"});
+}
+
+$(document).ready(function(){
+$("#UpdateStatus").submit(function(e){
+e.preventDefault();
+$.ajax({
+url: "ajax.php", // Url to which the request is send
+type: "POST",             // Type of request to be send, called as method
+data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+contentType: false,       // The content type used when sending data to the server.
+cache: false,             // To unable request pages to be cached
+processData:false,        // To send DOMDocument or non processed data file it is set to false
+		   	beforeSend: function(){	
+			$("#post").html('Updating...<img src="images/ring.gif" width="25px">');
+		   },
+success: function(data)   // A function to be called if request succeeds
+{
+
+
+}
+});
+
+//$('[data-="22"]')
+});
+});
+</script>
+
